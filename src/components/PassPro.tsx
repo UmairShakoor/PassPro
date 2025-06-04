@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import CryptoJS from 'crypto-js';
 import { Eye, EyeOff, Lock, Shield } from 'lucide-react';
@@ -245,8 +246,8 @@ const PassPro = () => {
 
         {/* Footer */}
         <footer className="mt-12 text-center space-y-4">
-          <div className="flex flex-col md:flex-row items-center justify-center text-blue-200 space-y-2 md:space-y-0 md:space-x-1">
-            <div className="flex items-center">
+          <div className="flex flex-col md:flex-row md:justify-between md:items-center text-blue-200 space-y-2 md:space-y-0">
+            <div className="flex items-center justify-center md:justify-start">
               <span>Made with</span>
               <span className="text-red-500 mx-1 text-lg">♥</span>
               <span>by Umair Shakoor</span>
