@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import CryptoJS from 'crypto-js';
 import { Eye, EyeOff, Lock, Shield } from 'lucide-react';
@@ -164,7 +163,11 @@ const PassPro = () => {
                   type={showKey ? 'text' : 'password'}
                   value={encryptionKey}
                   onChange={(e) => setEncryptionKey(e.target.value)}
-                  placeholder="Enter a strong encryption key..."
+                  placeholder={
+                    mode === 'encrypt' 
+                      ? "Enter a strong encryption key..." 
+                      : "Enter your secrete key that you used at Encryption time.."
+                  }
                   className="pr-10 font-space-mono bg-gray-900/50 border-blue-500/30 text-white placeholder:text-gray-400 focus:border-blue-400 focus:ring-blue-400"
                 />
                 <button
@@ -175,9 +178,11 @@ const PassPro = () => {
                   {showKey ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                 </button>
               </div>
-              <p className="text-xs text-gray-400">
-                Use a strong, unique key. Remember this key - it cannot be recovered!
-              </p>
+              {mode === 'encrypt' && (
+                <p className="text-xs text-gray-400">
+                  Use a strong, unique key. Remember this key - it cannot be recovered!
+                </p>
+              )}
             </div>
 
             {/* Action Buttons */}
@@ -252,7 +257,7 @@ const PassPro = () => {
               <span className="text-red-500 mx-1 text-lg">♥</span>
               <span>by Umair Shakoor</span>
             </div>
-            <div className="text-sm text-gray-400">
+            <div className="text-base text-gray-400">
               &copy; 2025 Pass Pro. All Rights Reserved
             </div>
           </div>
