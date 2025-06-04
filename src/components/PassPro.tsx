@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import CryptoJS from 'crypto-js';
 import { Eye, EyeOff, Lock, Shield } from 'lucide-react';
@@ -88,29 +87,28 @@ const PassPro = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100 font-space-mono">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-black font-space-mono">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         {/* Header */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center mb-4">
             <div className="bg-blue-600 p-3 rounded-full mr-3">
-              <Lock className="h-8 w-8 text-white" />
+              <Shield className="h-8 w-8 text-white" />
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-800">Pass Pro</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-white">Pass Pro</h1>
           </div>
-          <p className="text-xl text-gray-600">Secure Password Encrypter & Decrypter</p>
-          <p className="text-sm text-gray-500 mt-2">AES-256 Encryption • No Data Storage • 100% Client-Side</p>
+          <p className="text-xl text-blue-200">Secure Password Encrypter & Decrypter</p>
         </div>
 
         {/* Mode Selection */}
         <div className="flex justify-center mb-8">
-          <div className="bg-white rounded-lg p-1 shadow-lg border">
+          <div className="bg-gray-800/50 rounded-lg p-1 shadow-lg border border-blue-500/30 backdrop-blur-sm">
             <button
               onClick={() => setMode('encrypt')}
               className={`px-6 py-2 rounded-md font-medium transition-all ${
                 mode === 'encrypt'
                   ? 'bg-blue-600 text-white shadow-md'
-                  : 'text-gray-600 hover:text-blue-600'
+                  : 'text-blue-300 hover:text-blue-100'
               }`}
             >
               <Shield className="h-4 w-4 inline mr-2" />
@@ -121,7 +119,7 @@ const PassPro = () => {
               className={`px-6 py-2 rounded-md font-medium transition-all ${
                 mode === 'decrypt'
                   ? 'bg-blue-600 text-white shadow-md'
-                  : 'text-gray-600 hover:text-blue-600'
+                  : 'text-blue-300 hover:text-blue-100'
               }`}
             >
               <Lock className="h-4 w-4 inline mr-2" />
@@ -131,7 +129,7 @@ const PassPro = () => {
         </div>
 
         {/* Main Content */}
-        <Card className="shadow-xl border-0 bg-white/80 backdrop-blur-sm">
+        <Card className="shadow-xl border border-blue-500/30 bg-gray-800/80 backdrop-blur-sm">
           <CardHeader className="bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-t-lg">
             <CardTitle className="text-2xl font-bold text-center">
               {mode === 'encrypt' ? 'Encrypt Your Text' : 'Decrypt Your Text'}
@@ -140,7 +138,7 @@ const PassPro = () => {
           <CardContent className="p-6 space-y-6">
             {/* Input Text */}
             <div className="space-y-2">
-              <label className="text-sm font-semibold text-gray-700">
+              <label className="text-sm font-semibold text-blue-200">
                 {mode === 'encrypt' ? 'Text to Encrypt:' : 'Encrypted Text:'}
               </label>
               <Textarea
@@ -151,13 +149,13 @@ const PassPro = () => {
                     ? 'Enter your password or sensitive text here...'
                     : 'Paste your encrypted text here...'
                 }
-                className="min-h-[120px] font-space-mono text-sm border-blue-200 focus:border-blue-500 focus:ring-blue-500 resize-none"
+                className="min-h-[120px] font-space-mono text-sm bg-gray-900/50 border-blue-500/30 text-white placeholder:text-gray-400 focus:border-blue-400 focus:ring-blue-400 resize-none"
               />
             </div>
 
             {/* Encryption Key */}
             <div className="space-y-2">
-              <label className="text-sm font-semibold text-gray-700">
+              <label className="text-sm font-semibold text-blue-200">
                 {mode === 'encrypt' ? 'Encryption Key:' : 'Decryption Key:'}
               </label>
               <div className="relative">
@@ -166,17 +164,17 @@ const PassPro = () => {
                   value={encryptionKey}
                   onChange={(e) => setEncryptionKey(e.target.value)}
                   placeholder="Enter a strong encryption key..."
-                  className="pr-10 font-space-mono border-blue-200 focus:border-blue-500 focus:ring-blue-500"
+                  className="pr-10 font-space-mono bg-gray-900/50 border-blue-500/30 text-white placeholder:text-gray-400 focus:border-blue-400 focus:ring-blue-400"
                 />
                 <button
                   type="button"
                   onClick={() => setShowKey(!showKey)}
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-blue-600 transition-colors"
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-blue-400 transition-colors"
                 >
                   {showKey ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                 </button>
               </div>
-              <p className="text-xs text-gray-500">
+              <p className="text-xs text-gray-400">
                 Use a strong, unique key. Remember this key - it cannot be recovered!
               </p>
             </div>
@@ -203,7 +201,7 @@ const PassPro = () => {
               <Button
                 onClick={clearAll}
                 variant="outline"
-                className="flex-1 border-gray-300 text-gray-700 hover:bg-gray-50 font-semibold py-2 px-4 rounded-lg transition-colors"
+                className="flex-1 border-gray-600 text-gray-300 hover:bg-gray-700 hover:text-white font-semibold py-2 px-4 rounded-lg transition-colors"
               >
                 Clear All
               </Button>
@@ -212,14 +210,14 @@ const PassPro = () => {
             {/* Output */}
             {showOutput && (
               <div className="space-y-2 animate-fade-in">
-                <label className="text-sm font-semibold text-gray-700">
+                <label className="text-sm font-semibold text-blue-200">
                   {mode === 'encrypt' ? 'Encrypted Result:' : 'Decrypted Result:'}
                 </label>
                 <div className="relative">
                   <Textarea
                     value={outputText}
                     readOnly
-                    className="min-h-[120px] font-space-mono text-sm bg-gray-50 border-gray-200 resize-none"
+                    className="min-h-[120px] font-space-mono text-sm bg-gray-900/50 border-blue-500/30 text-white resize-none"
                   />
                   <Button
                     onClick={copyToClipboard}
@@ -233,9 +231,9 @@ const PassPro = () => {
             )}
 
             {/* Security Notice */}
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-              <h3 className="font-semibold text-blue-800 mb-2">🔒 Security Notice</h3>
-              <ul className="text-sm text-blue-700 space-y-1">
+            <div className="bg-blue-950/50 border border-blue-500/30 rounded-lg p-4">
+              <h3 className="font-semibold text-blue-300 mb-2">🔒 Security Notice</h3>
+              <ul className="text-sm text-blue-200 space-y-1">
                 <li>• All encryption/decryption happens in your browser</li>
                 <li>• No data is sent to any server or stored anywhere</li>
                 <li>• Keep your encryption keys safe - they cannot be recovered</li>
@@ -247,13 +245,15 @@ const PassPro = () => {
 
         {/* Footer */}
         <footer className="mt-12 text-center space-y-4">
-          <div className="flex items-center justify-center text-gray-600">
-            <span>Made with</span>
-            <span className="text-red-500 mx-1 text-lg">♥</span>
-            <span>by Umair Shakoor</span>
-          </div>
-          <div className="text-sm text-gray-500">
-            &copy; 2025 Pass Pro. All Rights Reserved
+          <div className="flex flex-col md:flex-row items-center justify-center text-blue-200 space-y-2 md:space-y-0 md:space-x-1">
+            <div className="flex items-center">
+              <span>Made with</span>
+              <span className="text-red-500 mx-1 text-lg">♥</span>
+              <span>by Umair Shakoor</span>
+            </div>
+            <div className="text-sm text-gray-400">
+              &copy; 2025 Pass Pro. All Rights Reserved
+            </div>
           </div>
         </footer>
       </div>
