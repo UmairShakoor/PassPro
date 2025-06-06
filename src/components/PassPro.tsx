@@ -92,7 +92,7 @@ const PassPro = () => {
         {/* Header */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center mb-4 gap-3">
-            <img src="public/favicon.ico" alt="Sheild" className="h-12"/>
+            <img src="/public/favicon.ico" alt="Sheild" className="h-12"/>
             <h1 className="text-4xl md:text-5xl font-bold text-white">Pass Pro</h1>
           </div>
           <p className="text-xl text-blue-200">Secure Password Encrypter & Decrypter</p>
