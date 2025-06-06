@@ -91,10 +91,8 @@ const PassPro = () => {
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         {/* Header */}
         <div className="text-center mb-8">
-          <div className="flex items-center justify-center mb-4">
-            <div className="bg-blue-600 p-3 rounded-full mr-3">
-              <Shield className="h-8 w-8 text-white" />
-            </div>
+          <div className="flex items-center justify-center mb-4 gap-3">
+            <img src="public/favicon.ico" alt="Sheild" className="h-12"/>
             <h1 className="text-4xl md:text-5xl font-bold text-white">Pass Pro</h1>
           </div>
           <p className="text-xl text-blue-200">Secure Password Encrypter & Decrypter</p>
@@ -111,7 +109,7 @@ const PassPro = () => {
                   : 'text-blue-300 hover:text-blue-100'
               }`}
             >
-              <Shield className="h-4 w-4 inline mr-2" />
+              <svg viewBox="0 0 448 512" className="h-4 w-4 inline mr-2" fill="white"><path d="M144 144l0 48 160 0 0-48c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192l0-48C80 64.5 144.5 0 224 0s144 64.5 144 144l0 48 16 0c35.3 0 64 28.7 64 64l0 192c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 256c0-35.3 28.7-64 64-64l16 0z"/></svg>
               Encrypt
             </button>
             <button
@@ -122,7 +120,7 @@ const PassPro = () => {
                   : 'text-blue-300 hover:text-blue-100'
               }`}
             >
-              <Lock className="h-4 w-4 inline mr-2" />
+              <svg viewBox="0 0 448 512" className="h-4 w-4 inline mr-2" fill="white"><path d="M144 144c0-44.2 35.8-80 80-80c31.9 0 59.4 18.6 72.3 45.7c7.6 16 26.7 22.8 42.6 15.2s22.8-26.7 15.2-42.6C331 33.7 281.5 0 224 0C144.5 0 80 64.5 80 144l0 48-16 0c-35.3 0-64 28.7-64 64L0 448c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-192c0-35.3-28.7-64-64-64l-240 0 0-48z"/></svg>
               Decrypt
             </button>
           </div>
@@ -194,12 +192,12 @@ const PassPro = () => {
               >
                 {mode === 'encrypt' ? (
                   <>
-                    <Shield className="h-4 w-4 mr-2" />
+                    <svg viewBox="0 0 448 512" className="h-4 w-4 inline mr-2" fill="white"><path d="M144 144l0 48 160 0 0-48c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192l0-48C80 64.5 144.5 0 224 0s144 64.5 144 144l0 48 16 0c35.3 0 64 28.7 64 64l0 192c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 256c0-35.3 28.7-64 64-64l16 0z"/></svg>
                     Encrypt Text
                   </>
                 ) : (
                   <>
-                    <Lock className="h-4 w-4 mr-2" />
+                    <svg viewBox="0 0 448 512" className="h-4 w-4 inline mr-2" fill="white"><path d="M144 144c0-44.2 35.8-80 80-80c31.9 0 59.4 18.6 72.3 45.7c7.6 16 26.7 22.8 42.6 15.2s22.8-26.7 15.2-42.6C331 33.7 281.5 0 224 0C144.5 0 80 64.5 80 144l0 48-16 0c-35.3 0-64 28.7-64 64L0 448c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-192c0-35.3-28.7-64-64-64l-240 0 0-48z"/></svg>
                     Decrypt Text
                   </>
                 )}
