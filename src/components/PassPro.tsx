@@ -139,7 +139,7 @@ const PassPro = () => {
               <label className="text-sm font-semibold text-blue-200">
                 {mode === 'encrypt' ? 'Text to Encrypt:' : 'Encrypted Text:'}
               </label>
-              <Textarea
+              <Textarea style={{fontFamily:'Red Hat Display' ,letterSpacing:'1.5px' ,fontSize:'0.8em'}}
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
                 placeholder={
@@ -166,7 +166,7 @@ const PassPro = () => {
                       ? "Enter a strong encryption key..." 
                       : "Enter your secrete key that you used at Encryption time.."
                   }
-                  className="pr-10 font-space-mono bg-gray-900/50 border-blue-500/30 text-white placeholder:text-gray-400 focus:border-blue-400 focus:ring-blue-400"
+                  className="pr-10 font-space-mono bg-gray-900/50 border-blue-500/30 text-white placeholder:text-gray-400 focus:border-blue-400 focus:ring-blue-400" style={{fontFamily:'Red Hat Display' ,letterSpacing:'1.5px' ,fontSize:'0.8em'}}
                 />
                 <button
                   type="button"
