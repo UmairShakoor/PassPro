@@ -10,7 +10,7 @@ Welcome to **Pass Pro**, your go-to password encrypter/decrypter for ultimate se
 - **Type-Safe**: Written in TypeScript for robust, error-free code. ✅
 
 ## 🔒 Security Notice
-- All encryption/decryption happens **in your browser**.
+- All encryption/decryption happens **in your browser** using secure **AES-256** encryption.
 - **No data** is sent to any server or stored anywhere.
 - Keep your encryption keys **safe** - they cannot be recovered.
 - Use **strong, unique keys** for maximum security.
